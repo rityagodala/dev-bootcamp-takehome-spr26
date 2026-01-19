@@ -1,8 +1,54 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Bootcamp Take‑Home Card</title>
+    <!-- Link to our custom stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--
+      This is the main card container. It is centered on the page using
+      flexbox (see styles.css for details). Feel free to adjust the
+      content and styling to better reflect your own interests or
+      personality.  For the purposes of this example, we have filled
+      in the information with plausible details based on the user
+      context.  The interactive button toggles additional text below.
+    -->
+    <div class="card">
+        <img src="avatar.png" alt="Profile illustration" class="avatar">
+        <h2 class="name">Ritya Godala</h2>
+        <p class="major"><strong>Major:</strong> Computer Science</p>
+        <p class="year"><strong>Year:</strong> 3rd Year (Class of 2026)</p>
+        <p class="passion">
+            <strong>Passion:</strong> Leveraging technology to build accessible
+            resources that uplift communities and promote social good.
+        </p>
+        <p class="from"><strong>From:</strong> Cumming, Georgia, USA</p>
+        <button id="moreBtn" class="toggle-btn">More About Me</button>
+        <div id="moreInfo" class="more-info hidden">
+            <p>
+                Beyond academics, I volunteer with local non‑profits to
+                teach young students the fundamentals of coding. I enjoy
+                working on projects that have a tangible, positive impact
+                on people's lives, and I'm excited to join a community
+                that shares those values.
+            </p>
+        </div>
+    </div>
 
-<html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-<!-- Your HTML Here -->
+    <!-- Simple JavaScript to toggle the extra information section -->
+    <script>
+    (function() {
+        const btn = document.getElementById('moreBtn');
+        const info = document.getElementById('moreInfo');
+        btn.addEventListener('click', function() {
+            info.classList.toggle('hidden');
+            // Update button text based on visibility state
+            btn.textContent = info.classList.contains('hidden') ? 'More About Me' : 'Hide';
+        });
+    })();
+    </script>
+</body>
 </html>
