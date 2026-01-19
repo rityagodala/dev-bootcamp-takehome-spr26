@@ -1,3 +1,114 @@
-/* Your Styles Here */
-body{
+/*
+ * This stylesheet defines the layout and appearance of the
+ * take‑home card.  The goal is to demonstrate a good grasp of
+ * vanilla CSS, including flexbox for centering, shadow effects,
+ * transitions, and simple animations.  Feel free to tweak colors or
+ * spacing to suit your preferences.
+ */
+
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+    color: #333;
+}
+
+/* Card container */
+.card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 24px 32px;
+    max-width: 340px;
+    width: 90%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Start with a subtle scale animation */
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Hover effect to lift the card */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Avatar image styling */
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007acc;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Text styling */
+.card h2 {
+    margin: 0 0 8px;
+    font-size: 1.6rem;
+}
+
+.card p {
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.card .passion {
+    margin-top: 12px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Toggle button styling */
+.toggle-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007acc;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #005fa3;
+    transform: scale(1.02);
+}
+
+/* Hidden class used to toggle the visibility of the extra info section */
+.hidden {
+    display: none;
+}
+
+/* Extra info section */
+.more-info {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Keyframes for the fade‑in upward entrance animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
